@@ -85,13 +85,11 @@ tvMazeFunc()
 
 // 5. Use the Poke API (https://pokeapi.co/) to display an image of Pikachu below the fourth div on the webpage
 
-
-
 async function pika() {
     try {
         const results = await axios.get(`https://pokeapi.co/api/v2/pokemon/pikachu`);
         const pikachu = results.data;
-        pikaImg = pikachu.sprites.front_default;
+        const pikaImg = pikachu.sprites.front_default;
         fourth.insertAdjacentHTML(`afterend`, `<img src="${pikaImg}" alt="Pikachu!">`)
         
     } catch (err) {
